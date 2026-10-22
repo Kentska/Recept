@@ -14,8 +14,8 @@ body {
 
 .container {
 	background-color:rgba(161, 0, 0, 0.3);
-	width: 2000px;
-	min-height: 1900px;
+	width:100%;
+	max-width: 2000px;
 	padding-bottom: 64px;
 	display: flex;
 	align-items: flex-start;
@@ -23,13 +23,15 @@ body {
 }
 
 .wrapper {
-	width:1280px;
+	width:100%;
+	max-width:1280px;
 	display: flex;
 	flex-direction: column;
 }
 
 .main-image {
-	width: 1280px;
+	width: 100%;
+	max-width: 1280px;
 	height: 500px;
 	border: 1px solid rgba(252, 252, 252, 1);
 	overflow: hidden;
@@ -143,6 +145,7 @@ body {
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 467px;
 	gap: 24px;
+	width: 100%;
 }
 
 .image-row img {
@@ -152,5 +155,48 @@ body {
 	object-fit: cover;
 	object-position: 50% 50%;
 }
+/*-----------------------------------------------------------------------------------*/
 
+@media (max-width:700px) {
+	.main-image {
+		height: 500px;
+	}
 	
+.main-image img {
+	object-position: 50% 50%;
+}
+
+.frame-7 {
+	padding: 48px 16px 64px 16px;
+}
+.intro {
+	height:auto;
+	line-height: 22px;
+}
+.ingredients-title, .how-to-title, .serving-title {
+	font-size: 32px;
+	line-height: 44px;
+}
+.ingredients-list {
+	line-height: 26px;
+}
+
+.how-to-list {
+	line-height: 26px;
+
+}
+.image-row {
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	row-gap:24px;
+	width: 100%;
+}
+.image-row img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	object-position: 50% 50%;
+
+}
+}
