@@ -1,13 +1,5 @@
-*, *::before, *::after {
-	box-sizing: border-box;
-}
-figure {
-	margin: 0;
-	padding: 0;
-}
-
+/* Behåll px på detta: Tunna ramar (border: 1px solid), skuggor (box-shadow) och väldigt små detaljer som inte bör skalas upp om en användare ändrar textstorlek i webbläsaren.*/
 body {
-	margin: 0;
 	background-color:#f0f0f0;
 	font-family: "Open Sans", Arial, sans-serif;
 	display:flex;
@@ -17,7 +9,7 @@ body {
 }
 .skip-link {
 	position: absolute;
-	top: -100px;
+	top: -6.25rem;
 	left: 1rem;
 	z-index: 1000;
 	padding: 0.75rem 1.5rem;
@@ -35,8 +27,8 @@ body {
 .container {
 	background-color:rgba(161, 0, 0, 0.3);
 	width:100%;
-	max-width: 2000px;
-	padding-bottom: 64px;
+	max-width: 125rem;
+	padding-bottom: 4rem;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -44,43 +36,41 @@ body {
 
 .wrapper {
 	width:100%;
-	max-width:1280px;
+	max-width: 80rem;
 	display: flex;
 	flex-direction: column;
 }
 
 .main-image {
 	width: 100%;
-	max-width: 1280px;
-	height: 500px;
+	max-width: 80rem;
+	height: 31.25rem;
 	border: 1px solid rgba(252, 252, 252, 1);
 	overflow: hidden;
 }
 
 .main-image img {
-	display: block;
 	width:100%;
 	height:100%;
 	object-fit: cover;
-	object-position: 50% 50%;
 }
 
 .recipe-card {
 	background-color: rgba(255, 255, 255, 1);
 	display:flex;
 	flex-direction: column;
-	gap: 24px;
-	padding: 48px 48px 64px 48px;
+	gap: 1.5rem;
+	padding: 3rem 3rem 4rem 3rem;
 	width:100%;
-	max-width:1280px;
+	max-width:80rem;
 	color:#000;
 }
 
 .recipe-title {
 	margin: 0;
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 700;
-	line-height: 38px;
+	line-height: 1.36;
 	letter-spacing: 0;
 	color: rgba(161, 0, 0, 1);
 }
@@ -90,12 +80,12 @@ body {
 	align-items: center;
 	margin: 0;
 	width: 100%;
-	height: 54px;
-	padding: 16px;
+	height: 3.375rem;
+	padding: 1rem;
 	background: rgba(235, 235, 235, 1);
 	font-weight: 400;
 	font-style: normal;
-	font-size: 16px;
+	font-size: 1rem;
 	line-height: 1;
 	letter-spacing: 0;
 }
@@ -103,77 +93,73 @@ body {
 .ingredients, .how-to{
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 1rem;
 	width: 100%;
 }
 
 .ingredients-title, .how-to-title {
-	margin:0;
 	font-weight: 700;
-	font-size: 24px;
-	line-height: 33px;
+	font-size: 1.5rem;
+	line-height: 1.38;
 	letter-spacing: 0;
 }
 
 .ingredients-intro {
-	margin: 0;
 	font-weight: 400;
-	font-size: 16px;
-	line-height: 22px;
+	font-size: 1rem;
+	line-height: 0.92;
 	letter-spacing: 0;
 }
 
 .ingredients-list {
 	margin: 0;
 	padding: 0;
-	margin-left:20px;
+	margin-left: 1.25rem;
 	list-style-type: disc;
 	font-weight: 400;
-	font-size: 16px;
-	line-height: 32px;
+	font-size: 1rem;
+	line-height: 2;
 	letter-spacing: 0;
 }
 
 .how-to-list {
 	margin: 0;
 	padding: 0;
-	margin-left: 20px;
+	margin-left: 1.25rem;
 	list-style-type: decimal;
 	font-weight: 400;
-	font-size: 16px;
-	line-height: 32px;
+	font-size: 1rem;
+	line-height: 2;
 	letter-spacing: 0;
 }
 
 .serving {
 	display:flex;
 	flex-direction:column;
-	gap:16px;
+	gap:1rem;
 	width:100%;
 }
 
 .serving-title {
 	margin: 0;
 	font-weight: 700;
-	font-size: 24px;
-	line-height: 33px;
+	font-size: 1.5rem;
+	line-height: 1.4;
 	letter-spacing: 0;
 }
 
 .image-row {
 	display:grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 467px;
-	gap: 24px;
+	grid-template-rows: 29.188rem;
+	gap: 1.5rem;
 	width: 100%;
 }
 
 .image-row img {
-	display: block;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: 50% 50%;
 }
 .todo-checkbox:checked ~ .todo-text {
     text-decoration: line-through;
@@ -183,7 +169,7 @@ body {
 
 @media (max-width:700px) {
 	.main-image {
-		height: 500px;
+		height: 31.25rem;
 	}
 	
 .main-image img {
@@ -191,28 +177,28 @@ body {
 }
 
 .recipe-card {
-	padding: 48px 16px 64px 16px;
+	padding: 3rem 1rem 4rem 1rem;
 }
 .intro {
 	height:auto;
-	line-height: 22px;
+	line-height: 1.8;
 }
 .ingredients-title, .how-to-title, .serving-title {
-	font-size: 32px;
-	line-height: 44px;
+	font-size: 2rem;
+	line-height: 1.8;
 }
 .ingredients-list {
-	line-height: 26px;
+	line-height: 1.6;
 }
 
 .how-to-list {
-	line-height: 26px;
+	line-height: 1.6;
 
 }
 .image-row {
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
-	row-gap:24px;
+	row-gap:1.5rem;
 	width: 100%;
 }
 .image-row img {
