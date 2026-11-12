@@ -1,7 +1,54 @@
-/* Behåll px på detta: Tunna ramar (border: 1px solid), skuggor (box-shadow) och väldigt små detaljer som inte bör skalas upp om en användare ändrar textstorlek i webbläsaren.*/
+/* Behåll px på: Tunna ramar (border: 1px solid), skuggor (box-shadow) och väldigt små detaljer som inte bör skalas upp om en användare ändrar textstorlek i webbläsaren.*/
+
+
+
+/*=== Tokens/Variables ===*/
+:root {
+/* font-families */
+ --ff-main: "Open Sans", Arial, sans-serif;
+
+ /* font-weights */
+ --fw-regular: 400;
+ --fw-bold: 700;
+
+ /* font-sizes */
+ --fs-small: 1rem;
+ --fs-medium: 1.5rem;
+ --fs-large: 1.75rem;
+ --fs-xlarge: 2rem;
+
+ /* spacing */
+ --space-xsmall: 0.75rem;
+ --space-small: 1rem;
+ --space-medium: 1.5rem;
+ --space-large: 3rem;
+ --space-xlarge: 4rem;
+
+ /* line-heights */
+ --lh-small: 1;
+ --lh-medium: 1.4;
+ --lh-16: 1.6;
+ --lh-18: 1.8;
+ --lh-large: 2;
+ /* border-radius */
+ --br-small: 4px;
+ --br-medium: 8px;
+ --br-large: 35px;
+ 
+ /* colors */
+  --clr-primary: rgba(161, 0, 0, 1);         /* färg för rubriker/accenter */
+  --clr-bg-container: rgba(161, 0, 0, 0.3);  
+  --clr-bg-card: #ffffff;
+  --clr-bg-body: #f0f0f0;
+  --clr-bg-intro: #ebebeb;
+  --clr-bg-skip: #eedec5;
+  --clr-border-light: #fcfcfc;
+}
+
+
 body {
-	background-color:#f0f0f0;
-	font-family: "Open Sans", Arial, sans-serif;
+	background-color: var(--clr-bg-body);
+	font-family: var(--ff-main);
 	display:flex;
 	justify-content: center;
 	align-items: center;
@@ -10,14 +57,14 @@ body {
 .skip-link {
 	position: absolute;
 	top: -6.25rem;
-	left: 1rem;
+	left: var(--space-small);
 	z-index: 1000;
-	padding: 0.75rem 1.5rem;
-	background: #EEDEC5;
+	padding: var(--space-xsmall) var(--space-medium);
+	background: var(--clr-bg-skip);
 	color: #000;
-	font-weight: 700;
-	border: 4px solid rgba(161, 0, 0, 0.3);
-	border-radius: 35px;
+	font-weight: var(--fw-bold);
+	border: 4px solid var(--clr-bg-container);
+	border-radius: var(--br-large);
 }
 
 .skip-link:focus {
@@ -25,7 +72,7 @@ body {
 }
 
 .container {
-	background-color:rgba(161, 0, 0, 0.3);
+	background-color: var(--clr-bg-container);
 	width:100%;
 	max-width: 125rem;
 	padding-bottom: 4rem;
@@ -45,7 +92,7 @@ body {
 	width: 100%;
 	max-width: 80rem;
 	height: 31.25rem;
-	border: 1px solid rgba(252, 252, 252, 1);
+	border: 1px solid var(--clr-border-light);
 	overflow: hidden;
 }
 
@@ -56,7 +103,7 @@ body {
 }
 
 .recipe-card {
-	background-color: rgba(255, 255, 255, 1);
+	background-color: var(--clr-bg-card);
 	display:flex;
 	flex-direction: column;
 	gap: 1.5rem;
@@ -67,27 +114,24 @@ body {
 }
 
 .recipe-title {
-	margin: 0;
-	font-size: 1.75rem;
-	font-weight: 700;
-	line-height: 1.36;
-	letter-spacing: 0;
-	color: rgba(161, 0, 0, 1);
+	font-size: var(--fs-large);
+	font-weight: var(--fw-bold);
+	line-height: 1.4;
+	color: var(--clr-primary);
 }
 
 .intro {
 	display: flex;
 	align-items: center;
-	margin: 0;
 	width: 100%;
 	height: 3.375rem;
 	padding: 1rem;
-	background: rgba(235, 235, 235, 1);
-	font-weight: 400;
+	background: var(--clr-bg-intro);
+	font-weight: var(--fw-regular);
 	font-style: normal;
-	font-size: 1rem;
+	font-size: var(--fs-small);
 	line-height: 1;
-	letter-spacing: 0;
+
 }
 
 .ingredients, .how-to{
@@ -98,39 +142,31 @@ body {
 }
 
 .ingredients-title, .how-to-title {
-	font-weight: 700;
-	font-size: 1.5rem;
-	line-height: 1.38;
-	letter-spacing: 0;
+	font-weight: var(--fw-bold);
+	font-size: var(--fs-medium);
+	line-height: 1.4;
 }
 
 .ingredients-intro {
-	font-weight: 400;
-	font-size: 1rem;
+	font-weight: var(--fw-regular);
+	font-size: var(--fs-small);
 	line-height: 0.92;
-	letter-spacing: 0;
 }
 
 .ingredients-list {
-	margin: 0;
-	padding: 0;
 	margin-left: 1.25rem;
 	list-style-type: disc;
-	font-weight: 400;
-	font-size: 1rem;
+	font-weight: var(--fw-regular);
+	font-size: var(--fs-small);
 	line-height: 2;
-	letter-spacing: 0;
 }
 
 .how-to-list {
-	margin: 0;
-	padding: 0;
 	margin-left: 1.25rem;
 	list-style-type: decimal;
-	font-weight: 400;
-	font-size: 1rem;
+	font-weight: var(--fw-regular);
+	font-size: var(--fs-small);
 	line-height: 2;
-	letter-spacing: 0;
 }
 
 .serving {
@@ -141,11 +177,9 @@ body {
 }
 
 .serving-title {
-	margin: 0;
-	font-weight: 700;
-	font-size: 1.5rem;
+	font-weight: var(--fw-bold);
+	font-size: var(--fs-medium);
 	line-height: 1.4;
-	letter-spacing: 0;
 }
 
 .image-row {
