@@ -65,10 +65,12 @@ body {
 	font-weight: var(--fw-bold);
 	border: 4px solid var(--clr-bg-container);
 	border-radius: var(--br-large);
+
+
+&:focus {
+	top: 1rem;
 }
 
-.skip-link:focus {
-	top: 1rem;
 }
 
 .container {
@@ -94,12 +96,13 @@ body {
 	height: 31.25rem;
 	border: 1px solid var(--clr-border-light);
 	overflow: hidden;
-}
 
-.main-image img {
+
+&:img {
 	width:100%;
 	height:100%;
 	object-fit: cover;
+}
 }
 
 .recipe-card {
@@ -188,12 +191,12 @@ body {
 	grid-template-rows: 29.188rem;
 	gap: 1.5rem;
 	width: 100%;
-}
 
-.image-row img {
+& img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
 }
 .todo-checkbox:checked ~ .todo-text {
     text-decoration: line-through;
