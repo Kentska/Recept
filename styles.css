@@ -30,6 +30,7 @@
  --lh-16: 1.6;
  --lh-18: 1.8;
  --lh-large: 2;
+
  /* border-radius */
  --br-small: 4px;
  --br-medium: 8px;
@@ -109,7 +110,7 @@ body {
 	background-color: var(--clr-bg-card);
 	display:flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: var(--space-medium);
 	padding: 3rem 3rem 4rem 3rem;
 	width:100%;
 	max-width:80rem;
@@ -119,7 +120,7 @@ body {
 .recipe-title {
 	font-size: var(--fs-large);
 	font-weight: var(--fw-bold);
-	line-height: 1.4;
+	line-height: var(--lh-medium);
 	color: var(--clr-primary);
 }
 
@@ -128,32 +129,32 @@ body {
 	align-items: center;
 	width: 100%;
 	height: 3.375rem;
-	padding: 1rem;
+	padding: var(--space-small);
 	background: var(--clr-bg-intro);
 	font-weight: var(--fw-regular);
 	font-style: normal;
 	font-size: var(--fs-small);
-	line-height: 1;
+	line-height: var(--lh-small);
 
 }
 
 .ingredients, .how-to{
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: var(--space-small);
 	width: 100%;
 }
 
 .ingredients-title, .how-to-title {
 	font-weight: var(--fw-bold);
 	font-size: var(--fs-medium);
-	line-height: 1.4;
+	line-height: var(--lh-medium);
 }
 
 .ingredients-intro {
 	font-weight: var(--fw-regular);
 	font-size: var(--fs-small);
-	line-height: 0.92;
+	line-height: var(--lh-small);
 }
 
 .ingredients-list {
@@ -161,7 +162,7 @@ body {
 	list-style-type: disc;
 	font-weight: var(--fw-regular);
 	font-size: var(--fs-small);
-	line-height: 2;
+	line-height: var(--lh-large);
 }
 
 .how-to-list {
@@ -169,27 +170,27 @@ body {
 	list-style-type: decimal;
 	font-weight: var(--fw-regular);
 	font-size: var(--fs-small);
-	line-height: 2;
+	line-height: var(--lh-large);
 }
 
 .serving {
 	display:flex;
 	flex-direction:column;
-	gap:1rem;
+	gap: var(--space-small);
 	width:100%;
 }
 
 .serving-title {
 	font-weight: var(--fw-bold);
 	font-size: var(--fs-medium);
-	line-height: 1.4;
+	line-height: var(--lh-medium);
 }
 
 .image-row {
 	display:grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 29.188rem;
-	gap: 1.5rem;
+	gap: var(--space-medium);
 	width: 100%;
 
 
@@ -220,18 +221,18 @@ body {
 }
 .intro {
 	height:auto;
-	line-height: 1.8;
+	line-height: var(--lh-18);
 }
 .ingredients-title, .how-to-title, .serving-title {
 	font-size: 2rem;
-	line-height: 1.8;
+	line-height: var(--lh-18);
 }
 .ingredients-list {
-	line-height: 1.6;
+	line-height: var(--lh-16);
 }
 
 .how-to-list {
-	line-height: 1.6;
+	line-height: var(--lh-16);
 
 }
 .image-row {
