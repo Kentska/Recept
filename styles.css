@@ -20,16 +20,16 @@
  /* spacing */
  --space-xsmall: 0.75rem;
  --space-small: 1rem;
+ --space-list-indent: 1.25rem;
  --space-medium: 1.5rem;
  --space-large: 3rem;
  --space-xlarge: 4rem;
-
+ 
  /* line-heights */
- --lh-small: 1;
- --lh-medium: 1.4;
- --lh-16: 1.6;
- --lh-18: 1.8;
- --lh-large: 2;
+ --lh-none: 1;        /* enradstext i boxar */
+ --lh-body: 1.6;      /* brödtext */
+ --lh-relaxed: 1.8;   /* luftig text */
+ --lh-list: 2;        /* listor med mycket luft */
 
  /* border-radius */
  --br-small: 4px;
@@ -37,13 +37,13 @@
  --br-large: 35px;
  
  /* colors */
-  --clr-primary: rgba(161, 0, 0, 1);         /* färg för rubriker/accenter */
-  --clr-bg-container: rgba(161, 0, 0, 0.3);  
-  --clr-bg-card: #ffffff;
-  --clr-bg-body: #f0f0f0;
-  --clr-bg-intro: #ebebeb;
-  --clr-bg-skip: #eedec5;
-  --clr-border-light: #fcfcfc;
+ --clr-primary: rgba(161, 0, 0, 1);         /* färg för rubriker/accenter */
+ --clr-bg-container: rgba(161, 0, 0, 0.3);  
+ --clr-bg-card: #ffffff;
+ --clr-bg-body: #f0f0f0;
+ --clr-bg-intro: #ebebeb;
+ --clr-bg-skip: #eedec5;
+ --clr-border-light: #fcfcfc;
 }
 
 
@@ -120,7 +120,7 @@ body {
 .recipe-title {
 	font-size: var(--fs-large);
 	font-weight: var(--fw-bold);
-	line-height: var(--lh-medium);
+	line-height: var(--lh-heading);
 	color: var(--clr-primary);
 }
 
@@ -133,7 +133,7 @@ body {
 	font-weight: var(--fw-regular);
 	font-style: normal;
 	font-size: var(--fs-small);
-	line-height: var(--lh-small);
+	line-height: var(--lh-none);
 
 }
 
@@ -147,30 +147,24 @@ body {
 .ingredients-title, .how-to-title {
 	font-weight: var(--fw-bold);
 	font-size: var(--fs-medium);
-	line-height: var(--lh-medium);
+	line-height: var(--lh-heading);
 }
 
 .ingredients-intro {
 	font-weight: var(--fw-regular);
 	font-size: var(--fs-small);
-	line-height: var(--lh-small);
+	line-height: var(--lh-none);
 }
 
-.ingredients-list {
-	margin-left: 1.25rem;
-	list-style-type: disc;
+.ingredients-list, .how-to-list {
+	margin-left: var(--space-list-indent);
 	font-weight: var(--fw-regular);
 	font-size: var(--fs-small);
-	line-height: var(--lh-large);
+	line-height: var(--lh-list);
 }
 
-.how-to-list {
-	margin-left: 1.25rem;
-	list-style-type: decimal;
-	font-weight: var(--fw-regular);
-	font-size: var(--fs-small);
-	line-height: var(--lh-large);
-}
+.ingredients-list {list-style-type: disc;}
+.how-to-list {list-style-type: decimal;}
 
 .serving {
 	display:flex;
@@ -182,7 +176,7 @@ body {
 .serving-title {
 	font-weight: var(--fw-bold);
 	font-size: var(--fs-medium);
-	line-height: var(--lh-medium);
+	line-height: var(--lh-heading);
 }
 
 .image-row {
@@ -212,14 +206,14 @@ body {
 	padding: var(--space-large) var(--space-small) var(--space-xlarge) var(--space-small);
 }
 .intro {
-	line-height: var(--lh-18);
+	line-height: var(--lh-relaxed);
 }
 .ingredients-title, .how-to-title, .serving-title {
-	font-size: var(--fs-large);
-	line-height: var(--lh-18);
+	font-size: var(--fs-xlarge);
+	line-height: var(--lh-relaxed);
 }
 .ingredients-list, .how-to-list {
-	line-height: var(--lh-16);
+	line-height: var(--lh-body);
 }
 .image-row {
 	grid-template-columns: 1fr;
