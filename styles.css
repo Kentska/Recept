@@ -78,7 +78,7 @@ body {
 	background-color: var(--clr-bg-container);
 	width:100%;
 	max-width: 125rem;
-	padding-bottom: 4rem;
+	padding-bottom: var(--space-xlarge);
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -111,7 +111,7 @@ body {
 	display:flex;
 	flex-direction: column;
 	gap: var(--space-medium);
-	padding: 3rem 3rem 4rem 3rem;
+	padding: var(--space-large) var(--space-large) var(--space-xlarge) var(--space-large);
 	width:100%;
 	max-width:80rem;
 	color:#000;
@@ -128,7 +128,6 @@ body {
 	display: flex;
 	align-items: center;
 	width: 100%;
-	height: 3.375rem;
 	padding: var(--space-small);
 	background: var(--clr-bg-intro);
 	font-weight: var(--fw-regular);
@@ -189,7 +188,7 @@ body {
 .image-row {
 	display:grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 29.188rem;
+	grid-template-rows: 29.188rem; /* Consider using a variable if this should be responsive */
 	gap: var(--space-medium);
 	width: 100%;
 
@@ -208,45 +207,25 @@ body {
 /*-----------------------------------------------------------------------------------*/
 
 @media (max-width:700px) {
-	.main-image {
-		height: 31.25rem;
-	}
-	
-.main-image img {
-	object-position: 50% 50%;
-}
 
 .recipe-card {
-	padding: 3rem 1rem 4rem 1rem;
+	padding: var(--space-large) var(--space-small) var(--space-xlarge) var(--space-small);
 }
 .intro {
-	height:auto;
 	line-height: var(--lh-18);
 }
 .ingredients-title, .how-to-title, .serving-title {
-	font-size: 2rem;
+	font-size: var(--fs-large);
 	line-height: var(--lh-18);
 }
-.ingredients-list {
+.ingredients-list, .how-to-list {
 	line-height: var(--lh-16);
-}
-
-.how-to-list {
-	line-height: var(--lh-16);
-
 }
 .image-row {
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
-	row-gap:1.5rem;
-	width: 100%;
 }
 .image-row img {
-	display: block;
-	width: 100%;
 	height: auto;
-	object-fit: cover;
-	object-position: 50% 50%;
-
 }
 }
