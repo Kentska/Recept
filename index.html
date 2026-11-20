@@ -1,88 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recept</title>
-    <link rel="stylesheet" href="reset.css">
-	<link rel="stylesheet" href="styles.css">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receptsajten – Enkla vardagsrecept</title>
+    <link rel="stylesheet" href="variables.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://googleapis.com" rel="stylesheet" />
   </head>
   <body>
-	<!-- Skip link-->
     <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
 
-	<div class="container">
-		<main id="main-content" tabindex="-1" class="wrapper">
-			<figure class="main-image"> <img src="images/bild1.png" alt="Pannkakor med grädde och bär">
-			</figure>
-			<div class="recipe-card">
-				<h1 class="recipe-title">Enkelt recept på pannkakor</h1>
-				<p class="intro">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept</p>
-				<section class="ingredients">
-					<h2 class="ingredients-title">Ingredienser</h2>
-					<p class="ingredients-intro">För 4 portioner</p>
-					<ul class="ingredients-list">
-						<li>
-							<label class="todo-item">
-								<input type="checkbox" Class="todo-checkbox">
-								<span class="todo-text">2 1/2 dl vetemjöl</span>
-							</label>
-						</li>
-						<li>
-							<label class="todo-item">
-								<input type="checkbox" Class="todo-checkbox">
-								<span class="todo-text">1/2 tsk salt</span>
-							</label>
-						</li>
-						<li>
-							<label class="todo-item">
-								<input type="checkbox" Class="todo-checkbox">
-								<span class="todo-text">6 dl mjölk</span>
-							</label>
-						</li>
-						<li>
-							<label class="todo-item">
-								<input type="checkbox" Class="todo-checkbox">
-								<span class="todo-text">3 ägg</span>
-							</label>
-						</li>
-						<li>
-							<label class="todo-item">
-								<input type="checkbox" Class="todo-checkbox">
-								<span class="todo-text">smör (till stekning)</span>
-							</label>
-						</li>
-						<li>
-							<label class="todo-item">
-								<input type="checkbox" Class="todo-checkbox">
-								<span class="todo-text">sylt, bär eller frukt till servering</span>
-							</label>
-						</li>
-					</ul>
-				</section>
-				<section class="how-to">
-					<h2 class="how-to-title">Så här gör du</h2>
-					<ol class="how-to-list">
-						<li>Blanda mjöl och salt i en bunke.</li>
-                        <li>Vispa i hälften av mjölken och vispa till en slät smet.</li>
-						<li>Vispa i resten av mjölken och äggen.</li>
-						<li>Låt smeten vila ca 10 minuter.</li>
-						<li>Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek- eller pannkakspanna.</li>
-						<li>Servera med sylt, bär eller frukt</li>
-					</ol>
-				</section>
-				<section class="serving">
-					<h2 class="serving-title">Serveringsförslag</h2>
-					<figure class="image-row">
-						<img src="images/bild2.png" alt="Pannkakor på uppläggningsfat">
-						<img src="images/bild3.png" alt="Pannkakor med grädde och frukt">
-					</figure>
-				</section>
-				
-		
-	        </div>
-	    </main>
-	</div>
+    <div class="container">
+      <!-- HEADER (Samma på alla sidor) -->
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">LOGO</a>
+          <nav class="main-nav" aria-label="Huvudmeny">
+            <ul class="nav-list">
+              <li><a href="index.html" aria-current="page">Recept</a></li>
+              <li><a href="pannkakor.html">Om sajten</a></li>
+              <li><a href="recept.html" class="btn-primary">Dela recept</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- MAIN (80rem centrerad) -->
+      <main id="main-content" tabindex="-1" class="wrapper">
+        <!-- HERO: Bild med rubrik och intro ovanpå -->
+        <section class="hero">
+          <img
+            src="https://picsum.photos"
+            alt="Matbord med hemlagad mat"
+            class="hero-img"
+          />
+          <div class="hero-overlay">
+            <h1>Enkla vardagsrecept som alla kan laga</h1>
+            <p>
+              Hitta dina nya favoriter bland våra utvalda recept för frukost,
+              middag och fika.
+            </p>
+          </div>
+        </section>
+
+        <!-- KATEGORIER -->
+        <nav class="category-bar" aria-label="Receptkategorier">
+          <ul class="category-list">
+            <li><a href="#" class="category-pill">Frukost</a></li>
+            <li><a href="#" class="category-pill">Middag</a></li>
+            <li><a href="#" class="category-pill">Efterrätt</a></li>
+            <li><a href="#" class="category-pill">Fika</a></li>
+          </ul>
+        </nav>
+
+        <!-- RECEPTKORT (Alla länkar till pannkakor.html) -->
+        <section class="recipe-grid" aria-label="Utvalda recept">
+          <article class="card">
+            <a href="pannkakor.html" class="card-link">
+              <img
+                src="images/bild1.png"
+                alt="Pannkakor med grädde och bär"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h2 class="card-title">Pannkakor</h2>
+                <p class="card-time">30 min</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="card">
+            <a href="pannkakor.html" class="card-link">
+              <img
+                src="https://picsum.photos"
+                alt="Teriyaki laxbowl"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h2 class="card-title">Teriyaki laxbowl</h2>
+                <p class="card-time">30 min</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="card">
+            <a href="pannkakor.html" class="card-link">
+              <img
+                src="https://picsum.photos"
+                alt="Nybakat till fikat"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h2 class="card-title">Mjuk nötkaka med kolasås</h2>
+                <p class="card-time">50 min</p>
+              </div>
+            </a>
+          </article>
+        </section>
+      </main>
+
+      <!-- FOOTER (Samma på alla sidor) -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-columns">
+            <div class="footer-brand">
+              <a href="index.html" class="site-logo">LOGO</a>
+              <p>Enkla vardagsrecept som alla kan laga.</p>
+            </div>
+
+            <div class="footer-links">
+              <a href="#" class="footer-heading-link">Om sajten</a>
+              <h3>Fler recept</h3>
+              <ul>
+                <li><a href="#">Frukost</a></li>
+                <li><a href="#">Middag</a></li>
+                <li><a href="#">Efterrätt</a></li>
+                <li><a href="#">Fika</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>Bilder från picsum.photos &middot; &copy; 2026</p>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

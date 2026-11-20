@@ -1,0 +1,49 @@
+/*=== Tokens/Variables ===*/
+:root {
+/* font-families */
+ --ff-main: "Open Sans", Arial, sans-serif;
+
+ /* font-weights */
+ --fw-regular: 400;
+ --fw-bold: 700;
+
+ /* font-sizes */
+ --fs-small: 1rem; 
+ --fs-medium: 1.5rem; 
+ --fs-large: 1.75rem; 
+ --fs-xlarge: 2rem; 
+
+ /* spacing */
+ --space-xsmall: 0.75rem;  /* 12px */
+ --space-small: 1rem;       /* 16px */
+ --space-list-indent: 1.25rem; /* 20px */
+ --space-medium: 1.5rem;    /* 24px */
+ --space-large: 3rem;       /* 48px */
+ --space-xlarge: 4rem;      /* 64px */
+ 
+ /* line-heights */
+ --lh-none: 1;        /* enradstext i boxar(16px) */
+ --lh-body: 1.6;      /* brödtext (26px)*/
+ --lh-relaxed: 1.8;   /* luftig text (28px)*/
+ --lh-list: 2;        /* listor med mycket luft (32px) */
+
+ /* border-radius */
+ --br-small: 4px;   /* 4px */
+ --br-medium: 8px;  /* 8px */
+ --br-large: 35px;  /* 35px */
+ 
+
+ /* Primary & Accents */
+  --clr-primary: #b55438;    /* Bränd terrakotta – knappar, länkar & detaljer */
+  --clr-primary-hover: #96422a;   /* Mörkare terrakotta vid hover */
+  --clr-primary-soft: rgba(181, 84, 56, 0.1);  /* Mjuk ton för kategorier & badges */
+
+  /* Backgrounds */
+  --clr-bg-body: #efe8dc;       /* Varm mandel – sidans bakgrund */
+  --clr-bg-card: #ffffff;       /* Kritvit – kort, meny och formulär */
+  --clr-bg-intro: #f9f6f0;      /* Varm havremjölk – faktarutor */
+
+  /* Text & Borders */
+  --clr-text: #2b2623;           /* Mörk espresso för rubriker och brödtext */
+  --clr-border-light: #dfd6c7;   /* Diskret mandelkant */
+}

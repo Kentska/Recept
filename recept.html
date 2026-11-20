@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dela recept – Receptsajten</title>
+    <link rel="stylesheet" href="variables.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://googleapis.com" rel="stylesheet" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
+
+    <div class="container">
+      <!-- HEADER (Samma på alla sidor) -->
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">LOGO</a>
+          <nav class="main-nav" aria-label="Huvudmeny">
+            <ul class="nav-list">
+              <li><a href="index.html">Recept</a></li>
+              <li><a href="pannkakor.html">Om sajten</a></li>
+              <li>
+                <a href="recept.html" class="btn-primary" aria-current="page"
+                  >Dela recept</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- MAIN (80rem centrerad) -->
+      <main id="main-content" tabindex="-1" class="wrapper">
+        <section class="form-card">
+          <h1>Dela ditt favoritrecept</h1>
+          <p class="intro">
+            Har du ett gott recept du vill tipsa andra om? Fyll i formuläret
+            nedan så lägger vi till det i samlingen.
+          </p>
+
+          <form action="#" method="post" class="recipe-form">
+            <!-- Grunduppgifter -->
+            <div class="form-group">
+              <label for="recipe-name">Receptets namn *</label>
+              <input
+                type="text"
+                id="recipe-name"
+                name="recipe-name"
+                placeholder="T.ex. Farmors äppelpaj"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="category">Kategori *</label>
+                <select id="category" name="category" required>
+                  <option value="">Välj kategori...</option>
+                  <option value="frukost">Frukost</option>
+                  <option value="middag">Middag</option>
+                  <option value="efterratt">Efterrätt</option>
+                  <option value="fika">Fika</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="cook-time">Tillagningstid *</label>
+                <input
+                  type="text"
+                  id="cook-time"
+                  name="cook-time"
+                  placeholder="T.ex. 30 min"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="portions">Portioner *</label>
+                <input
+                  type="number"
+                  id="portions"
+                  name="portions"
+                  min="1"
+                  max="20"
+                  placeholder="4"
+                  required
+                />
+              </div>
+            </div>
+            <!-- Svårighetsgrad -->
+            <fieldset class="form-fieldset">
+              <legend class="fieldset-legend">Svårighetsgrad *</legend>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="difficulty" value="latt" required />
+                  <span>Lätt</span>
+                </label>
+
+                <label class="radio-label">
+                  <input type="radio" name="difficulty" value="medel" />
+                  <span>Medel</span>
+                </label>
+
+                <label class="radio-label">
+                  <input type="radio" name="difficulty" value="svar" />
+                  <span>Svår</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-group">
+              <label for="ingredients">Ingredienser (en per rad) *</label>
+              <textarea
+                id="ingredients"
+                name="ingredients"
+                rows="6"
+                placeholder="2 1/2 dl vetemjöl&#10;6 dl mjölk&#10;3 ägg"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="instructions">Gör så här (steg för steg) *</label>
+              <textarea
+                id="instructions"
+                name="instructions"
+                rows="6"
+                placeholder="1. Blanda mjöl och salt i en bunke.&#10;2. Vispa i hälften av mjölken..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Avsändare -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="author-name">Ditt namn *</label>
+                <input
+                  type="text"
+                  id="author-name"
+                  name="author-name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="author-email">Din e-post *</label>
+                <input
+                  type="email"
+                  id="author-email"
+                  name="author-email"
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit">
+              Skicka in recept
+            </button>
+          </form>
+        </section>
+      </main>
+
+      <!-- Gemensam footer -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-bottom">
+            <p>Bilder från picsum.photos &middot; &copy; 2026</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

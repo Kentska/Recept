@@ -1,192 +1,437 @@
-/*=== Tokens/Variables ===*/
-:root {
-/* font-families */
- --ff-main: "Open Sans", Arial, sans-serif;
-
- /* font-weights */
- --fw-regular: 400;
- --fw-bold: 700;
-
- /* font-sizes */
- --fs-small: 1rem;
- --fs-medium: 1.5rem;
- --fs-large: 1.75rem;
- --fs-xlarge: 2rem;
-
- /* spacing */
- --space-xsmall: 0.75rem;
- --space-small: 1rem;
- --space-list-indent: 1.25rem;
- --space-medium: 1.5rem;
- --space-large: 3rem;
- --space-xlarge: 4rem;
- 
- /* line-heights */
- --lh-none: 1;        /* enradstext i boxar */
- --lh-body: 1.6;      /* brödtext */
- --lh-relaxed: 1.8;   /* luftig text */
- --lh-list: 2;        /* listor med mycket luft */
-
- /* border-radius */
- --br-small: 4px;
- --br-medium: 8px;
- --br-large: 35px;
- 
- /* colors */
- --clr-primary: rgba(161, 0, 0, 1);         /* färg för rubriker/accenter */
- --clr-bg-container: rgba(161, 0, 0, 0.3);  
- --clr-bg-card: #ffffff;
- --clr-bg-body: #f0f0f0;
- --clr-bg-intro: #ebebeb;
- --clr-bg-skip: #eedec5;
- --clr-border-light: #fcfcfc;
-}
 body {
-	background-color: var(--clr-bg-body);
-	font-family: var(--ff-main);
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;		
+  background-color: var(--clr-bg-body);
+  font-family: var(--ff-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 .skip-link {
-	position: absolute;
-	top: -6.25rem;
-	left: var(--space-small);
-	z-index: 1000;
-	padding: var(--space-xsmall) var(--space-medium);
-	background: var(--clr-bg-skip);
-	color: #000;
-	font-weight: var(--fw-bold);
-	border: 4px solid var(--clr-bg-container);
-	border-radius: var(--br-large);
+  position: absolute;
+  top: -6.25rem;
+  left: var(--space-small);
+  z-index: 1000;
+  padding: var(--space-xsmall) var(--space-medium);
+  background: var(--clr-bg-skip);
+  color: #000;
+  font-weight: var(--fw-bold);
+  border: 4px solid var(--clr-bg-container);
+  border-radius: var(--br-large);
 
-&:focus {
-	top: 1rem;
+  &:focus {
+    top: 1rem;
+  }
 }
+
+/* Gemensam header och footer centrerad på 80rem */
+.site-header,
+.site-footer {
+  width: 100%;
+  max-width: 80rem;
+  background-color: var(--clr-bg-card);
+  border-bottom: 1px solid var(--clr-border-light);
 }
-.container {
-	background-color: var(--clr-bg-container);
-	width:100%;
-	max-width: 125rem;
-	padding-bottom: var(--space-xlarge);
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+
+.site-footer {
+  /*border-top: 1px solid var(--clr-border-light);*/
+  border-bottom: none;
+  /*margin-top: 4rem;*/
 }
-.wrapper {
-	width:100%;
-	max-width: 80rem;
-	display: flex;
-	flex-direction: column;
+
+.header-inner,
+.footer-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  list-style: none;
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Hero med text ovanpå bilden */
+.hero {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.hero-img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(43, 38, 35, 0.8),
+    rgba(43, 38, 35, 0.2)
+  );
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+/* Kategoripiller */
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 2rem 0;
+}
+
+.category-pill {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+  background-color: var(--clr-bg-card);
+  border: 1px solid var(--clr-border-light);
+  border-radius: 999px;
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
+.category-pill:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+/* 3 receptkort i rad (responsivt ner till 300px) */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--clr-bg-card);
+  border: 1px solid var(--clr-border-light);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-img {
+  width: 100%;
+  height: 13rem;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  color: var(--clr-primary);
+  text-decoration: underline;
+  margin-bottom: 0.25rem;
+}
+
+/* Footer-kolumner */
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--clr-border-light);
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.recipe-layout {
+  display: grid;
+  max-width: 80rem;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+  gap: 2rem;
 }
 .main-image {
-	width: 100%;
-	max-width: 80rem;
-	height: 31.25rem;
-	border: 1px solid var(--clr-border-light);
-	overflow: hidden;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
 
-& img {
-	width:100%;
-	height:100%;
-	object-fit: cover;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
-}
+
 .recipe-card {
-	background-color: var(--clr-bg-card);
-	display:flex;
-	flex-direction: column;
-	gap: var(--space-medium);
-	padding: var(--space-large) var(--space-large) var(--space-xlarge) var(--space-large);
-	width:100%;
-	max-width:80rem;
-	color:#000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Pannkakssidan */
+.container {
+  background-color: var(--clr-bg-card);
+  width: 100%;
+  max-width: 80rem;
+  padding-bottom: var(--space-xlarge);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+}
+
+.wrapper {
+  width: 100%;
+  background-color: var(--clr-bg-card);
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card {
+  background-color: var(--clr-bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+  padding: var(--space-large) var(--space-large) var(--space-xlarge)
+    var(--space-large);
+  width: 100%;
+  max-width: 80rem;
+  color: #000;
 }
 .recipe-title {
-	font-size: var(--fs-large);
-	font-weight: var(--fw-bold);
-	line-height: var(--lh-heading);
-	color: var(--clr-primary);
+  font-size: var(--fs-large);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  color: var(--clr-primary);
 }
 .intro {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	padding: var(--space-small);
-	background: var(--clr-bg-intro);
-	font-weight: var(--fw-regular);
-	font-style: normal;
-	font-size: var(--fs-small);
-	line-height: var(--lh-none);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-small);
+  background: var(--clr-bg-intro);
+  font-weight: var(--fw-regular);
+  font-style: normal;
+  font-size: var(--fs-small);
+  line-height: var(--lh-none);
 }
-.ingredients, .how-to{
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-small);
-	width: 100%;
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
-.ingredients-title, .how-to-title {
-	font-weight: var(--fw-bold);
-	font-size: var(--fs-medium);
-	line-height: var(--lh-heading);
+.recipe-meta li {
+  flex: 1 1 80px;
+  border: 1px solid var(--clr-border-light);
+  border-radius: 6px;
+  text-align: center;
+  padding: var(--space-small);
+}
+.ingredients,
+.how-to {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-small);
+  width: 100%;
+}
+.ingredients-title,
+.how-to-title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-medium);
+  line-height: var(--lh-heading);
 }
 .ingredients-intro {
-	font-weight: var(--fw-regular);
-	font-size: var(--fs-small);
-	line-height: var(--lh-none);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-small);
+  line-height: var(--lh-none);
 }
-.ingredients-list, .how-to-list {
-	margin-left: var(--space-list-indent);
-	font-weight: var(--fw-regular);
-	font-size: var(--fs-small);
-	line-height: var(--lh-list);
+.ingredients-list,
+.how-to-list {
+  margin-left: var(--space-list-indent);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-small);
+  line-height: var(--lh-list);
 }
-.ingredients-list {list-style-type: disc;}
-.how-to-list {list-style-type: decimal;}
+.ingredients-list {
+  list-style-type: disc;
+}
+.how-to-list {
+  list-style-type: decimal;
+}
 .serving {
-	display:flex;
-	flex-direction:column;
-	gap: var(--space-small);
-	width:100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-small);
+  width: 100%;
 }
 .serving-title {
-	font-weight: var(--fw-bold);
-	font-size: var(--fs-medium);
-	line-height: var(--lh-heading);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-medium);
+  line-height: var(--lh-heading);
 }
 .image-row {
-	display:grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: var(--space-medium);
-	width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: var(--space-medium);
+  width: 100%;
 
-& img {
-	width: 100%;
-	aspect-ratio: 5 / 4;
-	object-fit: cover;
+  & img {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+  }
 }
-}
+
 .todo-checkbox:checked ~ .todo-text {
-    text-decoration: line-through;
-    color: #888888; /* Gör texten lite ljusare/gråare när den är klar */
+  text-decoration: line-through;
+  color: #888888;
 }
-/*-----------------------------------------------------------------------------------*/
-@media (max-width:700px) {
-.recipe-card {
-	padding: var(--space-large) var(--space-small) var(--space-xlarge) var(--space-small);
+
+/* Formulärkort på Dela recept */
+.form-card {
+  background-color: var(--clr-bg-card);
+  border: 1px solid var(--clr-border-light);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
 }
-.intro {
-	line-height: var(--lh-relaxed);
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
 }
-.ingredients-title, .how-to-title, .serving-title {
-	font-size: var(--fs-xlarge);
-	line-height: var(--lh-relaxed);
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
 }
-.ingredients-list, .how-to-list {
-	line-height: var(--lh-body);
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
-.image-row {
-	grid-template-columns: 1fr;
+
+.form-group label {
+  font-weight: 700;
+  color: var(--clr-text);
 }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--clr-border-light);
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  color: var(--clr-text);
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 1px;
+  border-color: var(--clr-primary);
+}
+
+.btn-submit {
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+  background-color: var(--clr-primary-hover);
+}
+
+/* Svårighetsgrad – Radioknappar */
+.form-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fieldset-legend {
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 0.5rem;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* Färgar radioknappen i bränd terrakotta */
+.radio-label input[type="radio"] {
+  accent-color: var(--clr-primary);
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  cursor: pointer;
 }
