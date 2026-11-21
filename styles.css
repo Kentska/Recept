@@ -79,6 +79,7 @@ body {
 .btn-primary {
   display: inline-block;
   border-radius: var(--br-medium);
+  padding: 0.5rem 1rem;
   transition:
     background-color 0.2s ease,
     transform 0.1s ease;
@@ -377,7 +378,8 @@ body {
 }
 .image-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
   gap: var(--space-medium);
   width: 100%;
 
@@ -417,7 +419,8 @@ body {
 
 .form-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
   gap: 1rem;
 }
 
