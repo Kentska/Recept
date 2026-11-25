@@ -302,7 +302,7 @@ body {
     var(--space-large);
   width: 100%;
   max-width: 80rem;
-  color: #000;
+  color: var(--clr-text);
 }
 .recipe-title {
   font-size: var(--fs-large);
@@ -504,4 +504,55 @@ body {
   height: 1.1rem;
   margin: 0;
   cursor: pointer;
+}
+
+.footer-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  color-scheme: light dark;
+  /* ... dina OKLCH-variabler med light-dark() ... */
+}
+
+/* När rutan INTE är ikryssad -> tvinga ljust läge */
+:root:has(#theme-toggle:not(:checked)) {
+  color-scheme: light;
+}
+
+/* När rutan ÄR ikryssad -> tvinga mörkt läge */
+:root:has(#theme-toggle:checked) {
+  color-scheme: dark;
+}
+
+/* Styla labeln som en vanlig knapp */
+.theme-switch {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--clr-border-light);
+  background: var(--clr-bg-card);
+  color: var(--clr-text);
+  user-select: none;
+}
+
+/* Dölj själva kryssrutan visuellt (men behåll den för skärmläsare/tangentbord) */
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Visa rätt text beroende på läge */
+#theme-toggle:checked ~ .label-light {
+  display: none;
+}
+#theme-toggle:not(:checked) ~ .label-dark {
+  display: none;
 }
