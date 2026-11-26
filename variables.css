@@ -28,9 +28,9 @@
   --lh-list: 2; /* listor med mycket luft (32px) */
 
   /* border-radius */
-  --br-small: 4px; /* 4px */
-  --br-medium: 8px; /* 8px */
-  --br-large: 35px; /* 35px */
+  --br-small: 0.25rem; /* 4px */
+  --br-medium: 0.5rem; /* 8px */
+  --br-large: 2.1875rem; /* 35px */
 
   /* Talar om för webbläsaren att sidan stöder båda lägena */
   color-scheme: light dark;
@@ -39,7 +39,6 @@
   --hue-accent: 37;
   --hue-warm: 75;
 
-  /* Brand / Accent (Ljusare terrakotta i dark mode för bättre läsbarhet) */
   --clr-primary: light-dark(
     oklch(0.56 0.13 var(--hue-accent)),
     oklch(0.68 0.14 var(--hue-accent))
