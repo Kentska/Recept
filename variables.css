@@ -33,7 +33,7 @@
   --br-large: 2.1875rem; /* 35px */
 
   /* Talar om för webbläsaren att sidan stöder båda lägena */
-  color-scheme: light dark;
+  color-scheme: light;
 
   /* Basnyanser */
   --hue-accent: 37;
