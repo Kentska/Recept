@@ -32,7 +32,7 @@
   --br-medium: 0.5rem; /* 8px */
   --br-large: 2.1875rem; /* 35px */
 
-  /* Talar om för webbläsaren att sidan stöder båda lägena */
+  /* Talar om för webbläsaren att sidan kan stödja båda lägena */
   color-scheme: light;
 
   /* Basnyanser */
